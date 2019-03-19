@@ -11,8 +11,8 @@
 #max_runtime: 3600
 #command: python train.py
 
-machine: gpu
-env: python-1.0
+machine: cpu
+env: pytorch-1.0
 max_runtime: 3600
 command: python main.py
 
