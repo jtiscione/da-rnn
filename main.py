@@ -3,13 +3,19 @@ from typing import Tuple
 import json
 import os
 
+import matplotlib as mpl
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using non-interactive Agg backend')
+    mpl.use('Agg')
+
+import matplotlib.pyplot as plt
+
 import torch
 from torch import nn
 from torch import optim
 from sklearn.preprocessing import StandardScaler
 from sklearn.externals import joblib
 
-import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
