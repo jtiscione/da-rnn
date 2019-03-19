@@ -2,13 +2,14 @@ import torch
 from torch import nn
 from torch.nn import functional as tf
 
+from constants import device
 
 def init_hidden(x, hidden_size: int):
     """
     Train the initial value of the hidden state:
     https://r2rt.com/non-zero-initial-states-for-recurrent-neural-networks.html
     """
-    return torch.zeros(1, x.size(0), hidden_size)
+    return torch.zeros(1, x.size(0), hidden_size).to(device)
 
 
 class Encoder(nn.Module):
