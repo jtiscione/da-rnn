@@ -35,4 +35,4 @@ def save_or_show_plot(file_nm: str, save: bool):
 
 
 def numpy_to_tvar(x):
-    return Variable(torch.from_numpy(x).type(torch.FloatTensor).to(device))
+    return torch.from_numpy(x).type(torch.FloatTensor).to(device)
