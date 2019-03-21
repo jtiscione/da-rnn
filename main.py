@@ -192,7 +192,8 @@ def predict(t_net: DaRnnNet, t_dat: TrainData, train_size: int, batch_size: int,
 save_plots = True
 debug = False
 
-raw_data = pd.read_csv(os.path.join("data", "nasdaq100_padding.csv"), nrows=100 if debug else None)
+csv = "nasdaq100_80.csv" if debug else 'nasdaq100_padding.csv'
+raw_data = pd.read_csv(os.path.join("data", csv), nrows=80 if debug else None)
 logger.info(f"Shape of data: {raw_data.shape}.\nMissing in data: {raw_data.isnull().sum().sum()}.")
 targ_cols = ("NDX",)
 data, scaler = preprocess_data(raw_data, targ_cols)
